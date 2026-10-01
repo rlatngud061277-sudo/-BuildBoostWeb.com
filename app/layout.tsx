@@ -25,6 +25,12 @@ export const metadata: Metadata = {
     "BuildBoostWeb",
   ],
 
+  icons: {
+    icon: "/1F39DF31-2B72-4F2C-A045-85C0B63B616C.png",
+    shortcut: "/1F39DF31-2B72-4F2C-A045-85C0B63B616C.png",
+    apple: "/1F39DF31-2B72-4F2C-A045-85C0B63B616C.png",
+  },
+
   alternates: {
     canonical: SITE_URL,
   },
