@@ -65,22 +65,22 @@ const SERVICES = [
   {
     icon: "◫",
     title: "시공업 맞춤 홈페이지",
-    desc: "업체 소개만 하는 홈페이지가 아니라 실제 상담과 견적 문의로 이어지도록 구성합니다.",
+    desc: "업체 소개만 하는 홈페이지가 아니라 실제 상담과 견적 문의로 이어질 수 있도록 구성합니다.",
   },
   {
     icon: "⌖",
     title: "지역별 검색 페이지",
-    desc: "서울·경기·인천 등 실제 출장 지역을 기준으로 지역별 전용 페이지를 구성합니다.",
+    desc: "서울·경기·인천 등 실제 출장 지역을 기준으로 네이버 검색을 고려한 지역별 전용 페이지를 구성합니다.",
   },
   {
     icon: "⌕",
-    title: "네이버·구글 SEO",
-    desc: "검색엔진이 업체와 서비스, 영업지역을 이해하기 쉽도록 기본 검색 구조를 세팅합니다.",
+    title: "네이버 SEO 세팅",
+    desc: "네이버가 업체의 서비스와 영업지역을 이해하고 수집하기 쉽도록 사이트 구조와 검색 기본 설정을 세팅합니다.",
   },
   {
     icon: "☎",
     title: "문의 즉시 연결",
-    desc: "고객이 검색 후 바로 전화 또는 카카오톡 상담으로 넘어갈 수 있도록 동선을 만듭니다.",
+    desc: "고객이 검색 후 바로 전화 또는 카카오톡 상담으로 넘어갈 수 있도록 문의 동선을 만듭니다.",
   },
 ];
 
@@ -110,11 +110,11 @@ const PACKAGE = [
   },
   {
     title: "지역별 페이지 구축",
-    desc: "서울·경기·인천 등 실제 영업 지역에 맞춘 검색 페이지 제작",
+    desc: "서울·경기·인천 등 실제 영업 지역에 맞춘 네이버 검색용 지역 페이지 제작",
   },
   {
-    title: "검색엔진 기본 SEO",
-    desc: "메타데이터·사이트맵·검색엔진 수집을 고려한 구조 구축",
+    title: "네이버 SEO 기본 세팅",
+    desc: "메타데이터·robots·사이트맵·네이버 서치어드바이저 수집을 고려한 구조 구축",
   },
   {
     title: "집수리모아 등록",
@@ -139,12 +139,12 @@ const PRICING = [
   },
   {
     name: "2개월차",
-    desc: "유지관리 + 검색 노출 관리",
+    desc: "유지관리 + 네이버 검색 노출 관리",
     price: "500,000원",
   },
   {
     name: "3개월차",
-    desc: "유지관리 + 검색 노출 관리",
+    desc: "유지관리 + 네이버 검색 노출 관리",
     price: "500,000원",
   },
 ];
@@ -184,7 +184,7 @@ export default function Home() {
 
         <div className="container heroInner">
           <div className="heroBadge">
-            시공업체 전용 홈페이지 · 지역 검색 마케팅
+            시공업체 전용 홈페이지 · 네이버 지역 검색 마케팅
           </div>
 
           <h1>
@@ -196,9 +196,9 @@ export default function Home() {
           <p className="heroDescription">
             집수리·인테리어·철거·타일·욕실·전기 등
             <br />
-            시공업체를 위한 지역 검색형 홈페이지를 제작합니다.
+            시공업체를 위한 네이버 지역 검색형 홈페이지를 제작합니다.
             <br />
-            홈페이지 제작부터 지역 페이지, 검색엔진 세팅,
+            홈페이지 제작부터 지역 페이지, 네이버 검색 세팅,
             상담 연결까지 한 번에 구축합니다.
           </p>
 
@@ -229,7 +229,7 @@ export default function Home() {
 
             <div>
               <strong>03</strong>
-              <span>검색엔진 SEO</span>
+              <span>네이버 SEO 세팅</span>
             </div>
 
             <div>
@@ -259,7 +259,7 @@ export default function Home() {
             <p>
               광고비만 계속 쓰는 방식이 아니라
               <br />
-              우리 업체가 검색될 수 있는 자체 홈페이지 기반을
+              우리 업체가 네이버에서 검색될 수 있는 자체 홈페이지 기반을
               만듭니다.
             </p>
           </div>
@@ -328,14 +328,14 @@ export default function Home() {
               <h2>
                 실제 제작·운영 및
                 <br />
-                검색 노출 사례
+                네이버 검색 노출 사례
               </h2>
             </div>
 
             <p>
               직접 구축하고 운영한 시공업체 홈페이지와
               <br />
-              실제 검색 화면을 확인해보세요.
+              실제 네이버 검색 화면을 확인해보세요.
             </p>
           </div>
         </div>
@@ -350,7 +350,7 @@ export default function Home() {
                 <div className="portfolioImageFrame">
                   <img
                     src={item.src}
-                    alt={`BuildBoostWeb 실제 제작 및 검색 노출 사례 ${
+                    alt={`BuildBoostWeb 실제 제작 및 네이버 검색 노출 사례 ${
                       (index % PORTFOLIO_IMAGES.length) + 1
                     }`}
                     style={{
@@ -367,7 +367,7 @@ export default function Home() {
                   </div>
 
                   <strong>
-                    제작 · 검색 노출
+                    제작 · 네이버 검색 노출
                   </strong>
                 </div>
               </article>
@@ -378,9 +378,9 @@ export default function Home() {
         <div className="container">
           <div className="portfolioNotice">
             <span>✓</span>
-            실제 제작 사이트와 검색결과 화면을 활용한
+            실제 제작 사이트와 네이버 검색결과 화면을 활용한
             포트폴리오입니다. 검색 순위와 노출 위치는 검색
-            시점 및 검색엔진 정책에 따라 달라질 수 있습니다.
+            시점 및 네이버 검색 정책에 따라 달라질 수 있습니다.
           </div>
         </div>
       </section>
@@ -401,10 +401,10 @@ export default function Home() {
           <div className="flowGrid">
             <div className="flowCard">
               <div>01</div>
-              <h3>지역 검색</h3>
+              <h3>네이버 지역 검색</h3>
               <p>
-                고객이 네이버·구글에서 필요한
-                시공업체와 지역을 검색합니다.
+                고객이 네이버에서 필요한
+                시공 서비스와 지역을 검색합니다.
               </p>
             </div>
 
@@ -445,7 +445,7 @@ export default function Home() {
         <div className="container seoLayout">
           <div className="seoText">
             <div className="sectionLabel lightBlue">
-              LOCAL SEO STRUCTURE
+              NAVER LOCAL SEO
             </div>
 
             <h2>
@@ -457,9 +457,9 @@ export default function Home() {
             </h2>
 
             <p>
-              단순히 메인 홈페이지 하나만 만드는 것이 아니라
-              실제 출장 가능한 지역을 기반으로 지역 페이지를
-              구성합니다.
+              메인 홈페이지 하나만 만드는 것이 아니라
+              실제 출장 가능한 지역을 기반으로 네이버 지역 검색을
+              고려한 페이지를 구성합니다.
             </p>
 
             <div className="keywordExamples">
@@ -565,14 +565,15 @@ export default function Home() {
               </div>
 
               <h3>
-                검색과 문의까지 고려
+                네이버 검색과 문의까지 고려
               </h3>
 
               <ul>
                 <li>시공업 맞춤 홈페이지</li>
                 <li>서비스별 전용 페이지</li>
                 <li>지역별 검색 페이지</li>
-                <li>검색엔진 SEO 구조</li>
+                <li>네이버 SEO 구조</li>
+                <li>네이버 서치어드바이저 세팅</li>
                 <li>전화·카카오톡 즉시 연결</li>
                 <li>집수리모아 추가 노출</li>
               </ul>
@@ -640,7 +641,7 @@ export default function Home() {
               <p>
                 도메인 1년 + 홈페이지 제작 +
                 <br />
-                3개월 유지 및 관리 기준
+                3개월 유지 및 네이버 검색 관리 기준
               </p>
 
               <a href="#contact">
@@ -674,7 +675,7 @@ export default function Home() {
           <p>
             업종과 영업 지역만 알려주시면
             <br />
-            업체에 맞는 홈페이지 구축 방향부터 상담해드립니다.
+            업체에 맞는 홈페이지와 네이버 검색 구조부터 상담해드립니다.
           </p>
 
           <div className="ctaButtons">
@@ -712,7 +713,7 @@ export default function Home() {
             <p>
               집수리·인테리어·시공업체 전용
               <br />
-              홈페이지 제작 & 지역 검색 마케팅
+              홈페이지 제작 & 네이버 지역 검색 마케팅
             </p>
           </div>
 
