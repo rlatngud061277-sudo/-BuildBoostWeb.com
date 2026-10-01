@@ -1,16 +1,64 @@
 const PORTFOLIO_IMAGES = [
-  "/IMG_1199.png",
-  "/IMG_1136.png",
-  "/IMG_1135.png",
-  "/IMG_1121.png",
-  "/IMG_1111.png",
-  "/IMG_1110.png",
-  "/IMG_1109.png",
-  "/IMG_1108.png",
-  "/IMG_1107.png",
-  "/IMG_1103.png",
-  "/IMG_1071.png",
-  "/IMG_1070.png",
+  {
+    src: "/IMG_1199.png",
+    position: "center 35%",
+    scale: 1.22,
+  },
+  {
+    src: "/IMG_1136.png",
+    position: "center 36%",
+    scale: 1.2,
+  },
+  {
+    src: "/IMG_1135.png",
+    position: "center 34%",
+    scale: 1.2,
+  },
+  {
+    src: "/IMG_1121.png",
+    position: "center 38%",
+    scale: 1.22,
+  },
+  {
+    src: "/IMG_1111.png",
+    position: "center 35%",
+    scale: 1.2,
+  },
+  {
+    src: "/IMG_1110.png",
+    position: "center 36%",
+    scale: 1.2,
+  },
+  {
+    src: "/IMG_1109.png",
+    position: "center 38%",
+    scale: 1.22,
+  },
+  {
+    src: "/IMG_1108.png",
+    position: "center 36%",
+    scale: 1.2,
+  },
+  {
+    src: "/IMG_1107.png",
+    position: "center 38%",
+    scale: 1.22,
+  },
+  {
+    src: "/IMG_1103.png",
+    position: "center 36%",
+    scale: 1.2,
+  },
+  {
+    src: "/IMG_1071.png",
+    position: "center 37%",
+    scale: 1.2,
+  },
+  {
+    src: "/IMG_1070.png",
+    position: "center 37%",
+    scale: 1.2,
+  },
 ];
 
 const SERVICES = [
@@ -102,7 +150,10 @@ const PRICING = [
 ];
 
 export default function Home() {
-  const sliderImages = [...PORTFOLIO_IMAGES, ...PORTFOLIO_IMAGES];
+  const sliderImages = [
+    ...PORTFOLIO_IMAGES,
+    ...PORTFOLIO_IMAGES,
+  ];
 
   return (
     <main>
@@ -144,7 +195,7 @@ export default function Home() {
 
           <p className="heroDescription">
             집수리·인테리어·철거·타일·욕실·전기 등
-            <br className="mobileBreak" />
+            <br />
             시공업체를 위한 지역 검색형 홈페이지를 제작합니다.
             <br />
             홈페이지 제작부터 지역 페이지, 검색엔진 세팅,
@@ -157,7 +208,10 @@ export default function Home() {
               <span>→</span>
             </a>
 
-            <a href="#portfolio" className="secondaryButton">
+            <a
+              href="#portfolio"
+              className="secondaryButton"
+            >
               실제 제작 사례 보기
             </a>
           </div>
@@ -189,7 +243,9 @@ export default function Home() {
       {/* TARGET */}
       <section className="targetSection">
         <div className="container">
-          <div className="sectionLabel">FOR CONTRACTORS</div>
+          <div className="sectionLabel">
+            FOR CONTRACTORS
+          </div>
 
           <div className="sectionHeadingRow">
             <div>
@@ -203,7 +259,8 @@ export default function Home() {
             <p>
               광고비만 계속 쓰는 방식이 아니라
               <br />
-              우리 업체가 검색될 수 있는 자체 홈페이지 기반을 만듭니다.
+              우리 업체가 검색될 수 있는 자체 홈페이지 기반을
+              만듭니다.
             </p>
           </div>
 
@@ -216,22 +273,36 @@ export default function Home() {
       </section>
 
       {/* SERVICE */}
-      <section id="service" className="serviceSection">
+      <section
+        id="service"
+        className="serviceSection"
+      >
         <div className="container">
-          <div className="sectionLabel blue">WHY BUILDBOOSTWEB</div>
+          <div className="sectionLabel blue">
+            WHY BUILDBOOSTWEB
+          </div>
 
           <h2 className="sectionTitle">
             그냥 예쁜 홈페이지가 아니라
             <br />
-            <span>고객 문의를 생각한 구조</span>로 만듭니다.
+            <span>고객 문의를 생각한 구조</span>로
+            만듭니다.
           </h2>
 
           <div className="serviceGrid">
             {SERVICES.map((service, index) => (
-              <article className="serviceCard" key={service.title}>
+              <article
+                className="serviceCard"
+                key={service.title}
+              >
                 <div className="serviceTop">
-                  <div className="serviceIcon">{service.icon}</div>
-                  <span>0{index + 1}</span>
+                  <div className="serviceIcon">
+                    {service.icon}
+                  </div>
+
+                  <span>
+                    0{index + 1}
+                  </span>
                 </div>
 
                 <h3>{service.title}</h3>
@@ -243,7 +314,10 @@ export default function Home() {
       </section>
 
       {/* PORTFOLIO */}
-      <section id="portfolio" className="portfolioSection">
+      <section
+        id="portfolio"
+        className="portfolioSection"
+      >
         <div className="container">
           <div className="portfolioHeading">
             <div>
@@ -268,21 +342,35 @@ export default function Home() {
 
         <div className="sliderViewport">
           <div className="autoSlider">
-            {sliderImages.map((image, index) => (
-              <div className="portfolioSlide" key={`${image}-${index}`}>
-                <div className="browserBar">
-                  <span />
-                  <span />
-                  <span />
+            {sliderImages.map((item, index) => (
+              <article
+                className="portfolioSlide"
+                key={`${item.src}-${index}`}
+              >
+                <div className="portfolioImageFrame">
+                  <img
+                    src={item.src}
+                    alt={`BuildBoostWeb 실제 제작 및 검색 노출 사례 ${
+                      (index % PORTFOLIO_IMAGES.length) + 1
+                    }`}
+                    style={{
+                      objectPosition: item.position,
+                      transform: `scale(${item.scale})`,
+                    }}
+                  />
                 </div>
 
-                <img
-                  src={image}
-                  alt={`BuildBoostWeb 실제 제작 및 검색 노출 사례 ${
-                    (index % PORTFOLIO_IMAGES.length) + 1
-                  }`}
-                />
-              </div>
+                <div className="portfolioCardBottom">
+                  <div>
+                    <span className="liveDot" />
+                    실제 운영 사례
+                  </div>
+
+                  <strong>
+                    제작 · 검색 노출
+                  </strong>
+                </div>
+              </article>
             ))}
           </div>
         </div>
@@ -290,9 +378,9 @@ export default function Home() {
         <div className="container">
           <div className="portfolioNotice">
             <span>✓</span>
-            실제 사이트 구축 사례 및 검색결과 화면을 활용한 포트폴리오입니다.
-            검색 순위와 노출 위치는 검색 시점과 검색엔진 정책에 따라 달라질 수
-            있습니다.
+            실제 제작 사이트와 검색결과 화면을 활용한
+            포트폴리오입니다. 검색 순위와 노출 위치는 검색
+            시점 및 검색엔진 정책에 따라 달라질 수 있습니다.
           </div>
         </div>
       </section>
@@ -300,7 +388,9 @@ export default function Home() {
       {/* FLOW */}
       <section className="flowSection">
         <div className="container">
-          <div className="sectionLabel">HOW IT WORKS</div>
+          <div className="sectionLabel">
+            HOW IT WORKS
+          </div>
 
           <h2 className="sectionTitle">
             고객이 검색한 순간부터
@@ -313,27 +403,34 @@ export default function Home() {
               <div>01</div>
               <h3>지역 검색</h3>
               <p>
-                고객이 네이버·구글에서 필요한 시공업체와 지역을 검색합니다.
+                고객이 네이버·구글에서 필요한
+                시공업체와 지역을 검색합니다.
               </p>
             </div>
 
-            <div className="flowArrow">→</div>
+            <div className="flowArrow">
+              →
+            </div>
 
             <div className="flowCard">
               <div>02</div>
               <h3>홈페이지 방문</h3>
               <p>
-                업체 서비스, 시공 가능 지역, 실제 작업 내용을 확인합니다.
+                업체 서비스, 시공 가능 지역,
+                실제 작업 내용을 확인합니다.
               </p>
             </div>
 
-            <div className="flowArrow">→</div>
+            <div className="flowArrow">
+              →
+            </div>
 
             <div className="flowCard">
               <div>03</div>
               <h3>상담 문의</h3>
               <p>
-                전화 또는 카카오톡을 통해 바로 시공 상담으로 연결됩니다.
+                전화 또는 카카오톡을 통해
+                바로 시공 상담으로 연결됩니다.
               </p>
             </div>
           </div>
@@ -341,7 +438,10 @@ export default function Home() {
       </section>
 
       {/* SEO */}
-      <section id="seo" className="seoSection">
+      <section
+        id="seo"
+        className="seoSection"
+      >
         <div className="container seoLayout">
           <div className="seoText">
             <div className="sectionLabel lightBlue">
@@ -351,12 +451,15 @@ export default function Home() {
             <h2>
               홈페이지 하나에서
               <br />
-              <span>여러 지역 고객을 만납니다.</span>
+              <span>
+                여러 지역 고객을 만납니다.
+              </span>
             </h2>
 
             <p>
               단순히 메인 홈페이지 하나만 만드는 것이 아니라
-              실제 출장 가능한 지역을 기반으로 지역 페이지를 구성합니다.
+              실제 출장 가능한 지역을 기반으로 지역 페이지를
+              구성합니다.
             </p>
 
             <div className="keywordExamples">
@@ -392,10 +495,14 @@ export default function Home() {
       {/* PACKAGE */}
       <section className="packageSection">
         <div className="container">
-          <div className="sectionLabel blue">PACKAGE DETAILS</div>
+          <div className="sectionLabel blue">
+            PACKAGE DETAILS
+          </div>
 
           <div className="sectionHeadingRow">
-            <h2>기본 패키지에 포함됩니다.</h2>
+            <h2>
+              기본 패키지에 포함됩니다.
+            </h2>
 
             <p>
               처음 홈페이지를 만드는 업체도
@@ -410,6 +517,7 @@ export default function Home() {
                 <div className="packageNumber">
                   {String(index + 1).padStart(2, "0")}
                 </div>
+
                 <h3>{item.title}</h3>
                 <p>{item.desc}</p>
               </article>
@@ -428,13 +536,20 @@ export default function Home() {
           <h2>
             홈페이지 제작에서 끝나면
             <br />
-            <span>고객은 저절로 오지 않습니다.</span>
+            <span>
+              고객은 저절로 오지 않습니다.
+            </span>
           </h2>
 
           <div className="comparisonGrid">
             <div className="comparisonBasic">
-              <div className="comparisonBadge">일반 홈페이지</div>
-              <h3>업체 소개 중심</h3>
+              <div className="comparisonBadge">
+                일반 홈페이지
+              </div>
+
+              <h3>
+                업체 소개 중심
+              </h3>
 
               <ul>
                 <li>업체 소개</li>
@@ -449,7 +564,9 @@ export default function Home() {
                 BuildBoostWeb
               </div>
 
-              <h3>검색과 문의까지 고려</h3>
+              <h3>
+                검색과 문의까지 고려
+              </h3>
 
               <ul>
                 <li>시공업 맞춤 홈페이지</li>
@@ -465,12 +582,20 @@ export default function Home() {
       </section>
 
       {/* PRICING */}
-      <section id="pricing" className="pricingSection">
+      <section
+        id="pricing"
+        className="pricingSection"
+      >
         <div className="container">
           <div className="pricingHeading">
             <div>
-              <div className="sectionLabel blue">PRICING</div>
-              <h2>3개월 기본 패키지</h2>
+              <div className="sectionLabel blue">
+                PRICING
+              </div>
+
+              <h2>
+                3개월 기본 패키지
+              </h2>
             </div>
 
             <div className="minimumBadge">
@@ -481,19 +606,31 @@ export default function Home() {
           <div className="pricingLayout">
             <div className="pricingTable">
               {PRICING.map((item) => (
-                <div className="pricingRow" key={item.name}>
+                <div
+                  className="pricingRow"
+                  key={item.name}
+                >
                   <div>
-                    <strong>{item.name}</strong>
-                    <span>{item.desc}</span>
+                    <strong>
+                      {item.name}
+                    </strong>
+
+                    <span>
+                      {item.desc}
+                    </span>
                   </div>
 
-                  <b>{item.price}</b>
+                  <b>
+                    {item.price}
+                  </b>
                 </div>
               ))}
             </div>
 
             <div className="totalPriceCard">
-              <small>3개월 총 예상 비용</small>
+              <small>
+                3개월 총 예상 비용
+              </small>
 
               <strong>
                 1,560,000
@@ -515,7 +652,10 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section id="contact" className="ctaSection">
+      <section
+        id="contact"
+        className="ctaSection"
+      >
         <div className="ctaGlow" />
 
         <div className="container ctaInner">
@@ -526,7 +666,9 @@ export default function Home() {
           <h2>
             시공은 사장님이 하세요.
             <br />
-            <span>온라인 영업 기반은 저희가 만들겠습니다.</span>
+            <span>
+              온라인 영업 기반은 저희가 만들겠습니다.
+            </span>
           </h2>
 
           <p>
@@ -536,7 +678,10 @@ export default function Home() {
           </p>
 
           <div className="ctaButtons">
-            <a href="tel:01094134686" className="primaryButton">
+            <a
+              href="tel:01094134686"
+              className="primaryButton"
+            >
               ☎ 전화 상담하기
             </a>
 
@@ -563,6 +708,7 @@ export default function Home() {
             <div className="footerLogo">
               BuildBoost<span>Web</span>
             </div>
+
             <p>
               집수리·인테리어·시공업체 전용
               <br />
@@ -571,15 +717,23 @@ export default function Home() {
           </div>
 
           <div className="footerRight">
-            <span>www.buildboostweb.com</span>
-            <span>© 2026 BuildBoostWeb</span>
+            <span>
+              www.buildboostweb.com
+            </span>
+
+            <span>
+              © 2026 BuildBoostWeb
+            </span>
           </div>
         </div>
       </footer>
 
       {/* MOBILE FIXED */}
       <div className="mobileFixedBar">
-        <a href="tel:01094134686" className="mobileCall">
+        <a
+          href="tel:01094134686"
+          className="mobileCall"
+        >
           전화 상담
         </a>
 
