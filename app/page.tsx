@@ -61,29 +61,6 @@ const PORTFOLIO_IMAGES = [
   },
 ];
 
-const SERVICES = [
-  {
-    icon: "◫",
-    title: "시공업 맞춤 홈페이지",
-    desc: "업체 소개만 하는 홈페이지가 아니라 실제 상담과 견적 문의로 이어질 수 있도록 구성합니다.",
-  },
-  {
-    icon: "⌖",
-    title: "지역별 검색 페이지",
-    desc: "서울·경기·인천 등 실제 출장 지역을 기준으로 네이버 검색을 고려한 지역별 전용 페이지를 구성합니다.",
-  },
-  {
-    icon: "⌕",
-    title: "네이버 SEO 세팅",
-    desc: "네이버가 업체의 서비스와 영업지역을 이해하고 수집하기 쉽도록 사이트 구조와 검색 기본 설정을 세팅합니다.",
-  },
-  {
-    icon: "☎",
-    title: "문의 즉시 연결",
-    desc: "고객이 검색 후 바로 전화 또는 카카오톡 상담으로 넘어갈 수 있도록 문의 동선을 만듭니다.",
-  },
-];
-
 const INDUSTRIES = [
   "집수리",
   "인테리어",
@@ -91,62 +68,44 @@ const INDUSTRIES = [
   "타일",
   "욕실",
   "싱크볼",
-  "주방시공",
   "전기·조명",
   "배관",
   "에어컨",
   "벌목",
-  "기타 전문시공",
+];
+
+const FEATURES = [
+  {
+    number: "01",
+    title: "맞춤 홈페이지",
+    desc: "시공업체에 맞는 모바일 홈페이지를 제작합니다.",
+  },
+  {
+    number: "02",
+    title: "지역 검색 페이지",
+    desc: "실제 출장 지역별 페이지를 만들어 검색 기반을 구축합니다.",
+  },
+  {
+    number: "03",
+    title: "네이버 SEO",
+    desc: "서치어드바이저·사이트맵·검색 수집 구조까지 세팅합니다.",
+  },
+  {
+    number: "04",
+    title: "문의 즉시 연결",
+    desc: "전화·카카오톡으로 바로 상담할 수 있게 연결합니다.",
+  },
 ];
 
 const PACKAGE = [
-  {
-    title: "전문 홈페이지 제작",
-    desc: "업체명·전화번호·서비스·시공사례·상담 버튼까지 맞춤 제작",
-  },
-  {
-    title: "핵심 시공 카테고리 3개",
-    desc: "업체가 집중적으로 홍보하고 싶은 핵심 서비스 중심 구성",
-  },
-  {
-    title: "지역별 페이지 구축",
-    desc: "서울·경기·인천 등 실제 영업 지역에 맞춘 네이버 검색용 지역 페이지 제작",
-  },
-  {
-    title: "네이버 SEO 기본 세팅",
-    desc: "메타데이터·robots·사이트맵·네이버 서치어드바이저 수집을 고려한 구조 구축",
-  },
-  {
-    title: "집수리모아 등록",
-    desc: "전국 집수리 업체 플랫폼 등록을 통한 추가 홍보 채널 확보",
-  },
-  {
-    title: "모바일 상담 연결",
-    desc: "전화 및 카카오톡 상담 버튼을 통해 검색 고객을 바로 연결",
-  },
-];
-
-const PRICING = [
-  {
-    name: "도메인 등록",
-    desc: "전용 도메인 1년 사용",
-    price: "30,000원",
-  },
-  {
-    name: "1개월차",
-    desc: "홈페이지 제작 + 맞춤 초기 세팅",
-    price: "530,000원",
-  },
-  {
-    name: "2개월차",
-    desc: "유지관리 + 네이버 검색 노출 관리",
-    price: "500,000원",
-  },
-  {
-    name: "3개월차",
-    desc: "유지관리 + 네이버 검색 노출 관리",
-    price: "500,000원",
-  },
+  "업체 맞춤 홈페이지 제작",
+  "핵심 시공 카테고리 3개",
+  "서울·경기·인천 지역 페이지",
+  "네이버 SEO 기본 세팅",
+  "네이버 서치어드바이저 등록",
+  "집수리모아 업체 등록",
+  "전화·카카오톡 상담 연결",
+  "3개월 사이트 유지관리",
 ];
 
 export default function Home() {
@@ -165,14 +124,13 @@ export default function Home() {
           </a>
 
           <nav className="desktopNav">
+            <a href="#portfolio">실제사례</a>
             <a href="#service">서비스</a>
-            <a href="#portfolio">제작사례</a>
-            <a href="#seo">지역 SEO</a>
             <a href="#pricing">가격</a>
           </nav>
 
           <a href="#contact" className="headerCta">
-            상담 신청
+            무료 상담
           </a>
         </div>
       </header>
@@ -182,133 +140,175 @@ export default function Home() {
         <div className="heroGlow heroGlowOne" />
         <div className="heroGlow heroGlowTwo" />
 
-        <div className="container heroInner">
-          <div className="heroBadge">
-            시공업체 전용 홈페이지 · 네이버 지역 검색 마케팅
+        <div className="container heroGrid">
+          {/* LEFT */}
+          <div className="heroContent">
+            <div className="heroBadge">
+              시공업체 전용 홈페이지 · 네이버 지역 검색 마케팅
+            </div>
+
+            <h1>
+              홈페이지 하나로
+              <br />
+              <strong>지역 고객 문의까지.</strong>
+            </h1>
+
+            <p className="heroDescription">
+              집수리·인테리어·철거·타일 등
+              시공업체를 위한 홈페이지를 제작하고,
+              지역별 검색 페이지와 네이버 SEO까지 함께 세팅합니다.
+            </p>
+
+            <div className="heroButtons">
+              <a
+                href="tel:01094134686"
+                className="primaryButton"
+              >
+                전화 무료상담
+              </a>
+
+              <a
+                href="https://open.kakao.com/o/sDHKtQJi"
+                target="_blank"
+                rel="noreferrer"
+                className="kakaoButton"
+              >
+                카카오톡 상담
+              </a>
+            </div>
+
+            <div className="heroQuickInfo">
+              <div>
+                <small>기본 제작</small>
+                <strong>시공 카테고리 3개</strong>
+              </div>
+
+              <div>
+                <small>지역 검색</small>
+                <strong>수도권 49개 지역</strong>
+              </div>
+
+              <div>
+                <small>3개월 패키지</small>
+                <strong>1,560,000원</strong>
+              </div>
+            </div>
           </div>
 
-          <h1>
-            홈페이지를 만드는 이유는
-            <br />
-            <strong>결국 고객 문의입니다.</strong>
-          </h1>
+          {/* RIGHT PROOF */}
+          <div className="heroProof">
+            <div className="proofTop">
+              <div>
+                <span className="proofLive">
+                  <i />
+                  실제 제작·검색 사례
+                </span>
 
-          <p className="heroDescription">
-            집수리·인테리어·철거·타일·욕실·전기 등
-            <br />
-            시공업체를 위한 네이버 지역 검색형 홈페이지를 제작합니다.
-            <br />
-            홈페이지 제작부터 지역 페이지, 네이버 검색 세팅,
-            상담 연결까지 한 번에 구축합니다.
-          </p>
+                <h2>
+                  말보다
+                  <br />
+                  실제 결과를 보여드립니다.
+                </h2>
+              </div>
 
-          <div className="heroButtons">
-            <a href="#contact" className="primaryButton">
-              무료 상담 신청
-              <span>→</span>
-            </a>
-
-            <a
-              href="#portfolio"
-              className="secondaryButton"
-            >
-              실제 제작 사례 보기
-            </a>
-          </div>
-
-          <div className="heroTrust">
-            <div>
-              <strong>01</strong>
-              <span>시공업 맞춤 제작</span>
+              <span className="proofBadge">
+                REAL CASE
+              </span>
             </div>
 
-            <div>
-              <strong>02</strong>
-              <span>지역별 페이지</span>
+            <div className="proofImages">
+              <div className="proofImage proofImageMain">
+                <img
+                  src="/IMG_1199.png"
+                  alt="실제 홈페이지 제작 사례"
+                />
+              </div>
+
+              <div className="proofSide">
+                <div className="proofImage">
+                  <img
+                    src="/IMG_1136.png"
+                    alt="네이버 검색 노출 사례"
+                  />
+                </div>
+
+                <div className="proofImage">
+                  <img
+                    src="/IMG_1135.png"
+                    alt="지역 검색 노출 사례"
+                  />
+                </div>
+              </div>
             </div>
 
-            <div>
-              <strong>03</strong>
-              <span>네이버 SEO 세팅</span>
-            </div>
-
-            <div>
-              <strong>04</strong>
-              <span>상담 즉시 연결</span>
+            <div className="proofBottom">
+              <span>✓ 실제 운영 홈페이지</span>
+              <span>✓ 실제 네이버 검색 화면</span>
             </div>
           </div>
         </div>
+
+        <div className="container heroIndustry">
+          {INDUSTRIES.map((item) => (
+            <span key={item}>{item}</span>
+          ))}
+        </div>
       </section>
 
-      {/* TARGET */}
-      <section className="targetSection">
+      {/* QUICK VALUE */}
+      <section id="service" className="quickSection">
         <div className="container">
-          <div className="sectionLabel">
-            FOR CONTRACTORS
-          </div>
-
-          <div className="sectionHeadingRow">
+          <div className="quickHeading">
             <div>
+              <span className="sectionLabel">
+                WHY BUILDBOOSTWEB
+              </span>
+
               <h2>
-                시공은 잘하는데
+                예쁜 홈페이지보다
                 <br />
-                고객 확보가 어렵다면
+                <strong>검색되고 문의되는 구조.</strong>
               </h2>
             </div>
 
             <p>
-              광고비만 계속 쓰는 방식이 아니라
-              <br />
-              우리 업체가 네이버에서 검색될 수 있는 자체 홈페이지 기반을
-              만듭니다.
+              홈페이지 제작부터 네이버 검색 구조와
+              문의 연결까지 한 번에 구성합니다.
             </p>
           </div>
 
-          <div className="industryList">
-            {INDUSTRIES.map((industry) => (
-              <span key={industry}>{industry}</span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* SERVICE */}
-      <section
-        id="service"
-        className="serviceSection"
-      >
-        <div className="container">
-          <div className="sectionLabel blue">
-            WHY BUILDBOOSTWEB
-          </div>
-
-          <h2 className="sectionTitle">
-            그냥 예쁜 홈페이지가 아니라
-            <br />
-            <span>고객 문의를 생각한 구조</span>로
-            만듭니다.
-          </h2>
-
-          <div className="serviceGrid">
-            {SERVICES.map((service, index) => (
-              <article
-                className="serviceCard"
-                key={service.title}
-              >
-                <div className="serviceTop">
-                  <div className="serviceIcon">
-                    {service.icon}
-                  </div>
-
-                  <span>
-                    0{index + 1}
-                  </span>
-                </div>
-
-                <h3>{service.title}</h3>
-                <p>{service.desc}</p>
+          <div className="featureGrid">
+            {FEATURES.map((item) => (
+              <article key={item.number}>
+                <span>{item.number}</span>
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
               </article>
             ))}
+          </div>
+
+          <div className="seoBar">
+            <div>
+              <small>서울</small>
+              <strong>25개 구</strong>
+            </div>
+
+            <div>
+              <small>경기도</small>
+              <strong>14개 주요 지역</strong>
+            </div>
+
+            <div>
+              <small>인천</small>
+              <strong>10개 군·구</strong>
+            </div>
+
+            <div className="seoExample">
+              <small>검색 페이지 예시</small>
+              <strong>
+                강남구 집수리 · 수원 싱크볼 · 안양 철거
+              </strong>
+            </div>
           </div>
         </div>
       </section>
@@ -318,26 +318,23 @@ export default function Home() {
         id="portfolio"
         className="portfolioSection"
       >
-        <div className="container">
-          <div className="portfolioHeading">
-            <div>
-              <div className="sectionLabel lightBlue">
-                REAL PORTFOLIO
-              </div>
+        <div className="container portfolioHeading">
+          <div>
+            <span className="sectionLabel sectionLabelBlue">
+              ACTUAL RESULTS
+            </span>
 
-              <h2>
-                실제 제작·운영 및
-                <br />
-                네이버 검색 노출 사례
-              </h2>
-            </div>
-
-            <p>
-              직접 구축하고 운영한 시공업체 홈페이지와
+            <h2>
+              실제 제작 및
               <br />
-              실제 네이버 검색 화면을 확인해보세요.
-            </p>
+              네이버 검색 노출 사례
+            </h2>
           </div>
+
+          <p>
+            직접 제작·운영한 홈페이지와
+            네이버 검색 화면을 확인해보세요.
+          </p>
         </div>
 
         <div className="sliderViewport">
@@ -350,7 +347,7 @@ export default function Home() {
                 <div className="portfolioImageFrame">
                   <img
                     src={item.src}
-                    alt={`BuildBoostWeb 실제 제작 및 네이버 검색 노출 사례 ${
+                    alt={`BuildBoostWeb 실제 사례 ${
                       (index % PORTFOLIO_IMAGES.length) + 1
                     }`}
                     style={{
@@ -361,14 +358,8 @@ export default function Home() {
                 </div>
 
                 <div className="portfolioCardBottom">
-                  <div>
-                    <span className="liveDot" />
-                    실제 운영 사례
-                  </div>
-
-                  <strong>
-                    제작 · 네이버 검색 노출
-                  </strong>
+                  <span className="liveDot" />
+                  실제 제작 · 네이버 검색 사례
                 </div>
               </article>
             ))}
@@ -376,276 +367,90 @@ export default function Home() {
         </div>
 
         <div className="container">
-          <div className="portfolioNotice">
-            <span>✓</span>
-            실제 제작 사이트와 네이버 검색결과 화면을 활용한
-            포트폴리오입니다. 검색 순위와 노출 위치는 검색
-            시점 및 네이버 검색 정책에 따라 달라질 수 있습니다.
-          </div>
+          <p className="portfolioNotice">
+            실제 사이트 및 네이버 검색결과 화면입니다.
+            검색 순위와 노출 위치는 검색 시점과 네이버 정책에 따라
+            달라질 수 있습니다.
+          </p>
         </div>
       </section>
 
-      {/* FLOW */}
-      <section className="flowSection">
-        <div className="container">
-          <div className="sectionLabel">
-            HOW IT WORKS
-          </div>
-
-          <h2 className="sectionTitle">
-            고객이 검색한 순간부터
-            <br />
-            <span>상담까지 이어지게</span>
-          </h2>
-
-          <div className="flowGrid">
-            <div className="flowCard">
-              <div>01</div>
-              <h3>네이버 지역 검색</h3>
-              <p>
-                고객이 네이버에서 필요한
-                시공 서비스와 지역을 검색합니다.
-              </p>
-            </div>
-
-            <div className="flowArrow">
-              →
-            </div>
-
-            <div className="flowCard">
-              <div>02</div>
-              <h3>홈페이지 방문</h3>
-              <p>
-                업체 서비스, 시공 가능 지역,
-                실제 작업 내용을 확인합니다.
-              </p>
-            </div>
-
-            <div className="flowArrow">
-              →
-            </div>
-
-            <div className="flowCard">
-              <div>03</div>
-              <h3>상담 문의</h3>
-              <p>
-                전화 또는 카카오톡을 통해
-                바로 시공 상담으로 연결됩니다.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SEO */}
-      <section
-        id="seo"
-        className="seoSection"
-      >
-        <div className="container seoLayout">
-          <div className="seoText">
-            <div className="sectionLabel lightBlue">
-              NAVER LOCAL SEO
-            </div>
-
-            <h2>
-              홈페이지 하나에서
-              <br />
-              <span>
-                여러 지역 고객을 만납니다.
-              </span>
-            </h2>
-
-            <p>
-              메인 홈페이지 하나만 만드는 것이 아니라
-              실제 출장 가능한 지역을 기반으로 네이버 지역 검색을
-              고려한 페이지를 구성합니다.
-            </p>
-
-            <div className="keywordExamples">
-              <span>강남구 집수리</span>
-              <span>수원 싱크볼 교체</span>
-              <span>안양 철거업체</span>
-              <span>인천 타일시공</span>
-            </div>
-          </div>
-
-          <div className="seoNumbers">
-            <div>
-              <small>서울</small>
-              <strong>25</strong>
-              <span>개 구</span>
-            </div>
-
-            <div>
-              <small>경기도</small>
-              <strong>14</strong>
-              <span>개 주요 지역</span>
-            </div>
-
-            <div>
-              <small>인천</small>
-              <strong>10</strong>
-              <span>개 군·구</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* PACKAGE */}
-      <section className="packageSection">
-        <div className="container">
-          <div className="sectionLabel blue">
-            PACKAGE DETAILS
-          </div>
-
-          <div className="sectionHeadingRow">
-            <h2>
-              기본 패키지에 포함됩니다.
-            </h2>
-
-            <p>
-              처음 홈페이지를 만드는 업체도
-              <br />
-              복잡한 과정 없이 시작할 수 있습니다.
-            </p>
-          </div>
-
-          <div className="packageGrid">
-            {PACKAGE.map((item, index) => (
-              <article key={item.title}>
-                <div className="packageNumber">
-                  {String(index + 1).padStart(2, "0")}
-                </div>
-
-                <h3>{item.title}</h3>
-                <p>{item.desc}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* COMPARISON */}
-      <section className="comparisonSection">
-        <div className="container">
-          <div className="sectionLabel lightBlue">
-            DIFFERENCE
-          </div>
-
-          <h2>
-            홈페이지 제작에서 끝나면
-            <br />
-            <span>
-              고객은 저절로 오지 않습니다.
-            </span>
-          </h2>
-
-          <div className="comparisonGrid">
-            <div className="comparisonBasic">
-              <div className="comparisonBadge">
-                일반 홈페이지
-              </div>
-
-              <h3>
-                업체 소개 중심
-              </h3>
-
-              <ul>
-                <li>업체 소개</li>
-                <li>시공 사진</li>
-                <li>전화번호</li>
-                <li>단일 홈페이지</li>
-              </ul>
-            </div>
-
-            <div className="comparisonBoost">
-              <div className="comparisonBadge blueBadge">
-                BuildBoostWeb
-              </div>
-
-              <h3>
-                네이버 검색과 문의까지 고려
-              </h3>
-
-              <ul>
-                <li>시공업 맞춤 홈페이지</li>
-                <li>서비스별 전용 페이지</li>
-                <li>지역별 검색 페이지</li>
-                <li>네이버 SEO 구조</li>
-                <li>네이버 서치어드바이저 세팅</li>
-                <li>전화·카카오톡 즉시 연결</li>
-                <li>집수리모아 추가 노출</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* PRICING */}
+      {/* PACKAGE + PRICE */}
       <section
         id="pricing"
-        className="pricingSection"
+        className="packagePriceSection"
       >
         <div className="container">
-          <div className="pricingHeading">
+          <div className="priceIntro">
             <div>
-              <div className="sectionLabel blue">
-                PRICING
-              </div>
+              <span className="sectionLabel">
+                PACKAGE & PRICE
+              </span>
 
               <h2>
-                3개월 기본 패키지
+                복잡하게 나누지 않고
+                <br />
+                <strong>필요한 기능을 한 번에.</strong>
               </h2>
             </div>
 
-            <div className="minimumBadge">
-              최소 계약 기간 3개월
-            </div>
+            <p>
+              홈페이지를 처음 만드는 시공업체도
+              쉽게 시작할 수 있도록 구성했습니다.
+            </p>
           </div>
 
-          <div className="pricingLayout">
-            <div className="pricingTable">
-              {PRICING.map((item) => (
-                <div
-                  className="pricingRow"
-                  key={item.name}
-                >
-                  <div>
-                    <strong>
-                      {item.name}
-                    </strong>
+          <div className="packagePriceGrid">
+            <div className="packageCard">
+              <div className="packageTitle">
+                <span>기본 패키지 포함사항</span>
+                <b>8 ITEMS</b>
+              </div>
 
-                    <span>
-                      {item.desc}
-                    </span>
+              <div className="packageItems">
+                {PACKAGE.map((item) => (
+                  <div key={item}>
+                    <span>✓</span>
+                    {item}
                   </div>
-
-                  <b>
-                    {item.price}
-                  </b>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
 
-            <div className="totalPriceCard">
-              <small>
-                3개월 총 예상 비용
-              </small>
+            <div className="priceCard">
+              <span className="priceSmall">
+                3개월 기본 패키지
+              </span>
 
-              <strong>
+              <div className="priceMain">
                 1,560,000
-                <span>원</span>
-              </strong>
+                <small>원</small>
+              </div>
 
-              <p>
-                도메인 1년 + 홈페이지 제작 +
-                <br />
-                3개월 유지 및 네이버 검색 관리 기준
-              </p>
+              <div className="priceRows">
+                <div>
+                  <span>도메인 1년</span>
+                  <strong>30,000원</strong>
+                </div>
 
-              <a href="#contact">
-                상담 신청하기 →
+                <div>
+                  <span>1개월차</span>
+                  <strong>530,000원</strong>
+                </div>
+
+                <div>
+                  <span>2개월차</span>
+                  <strong>500,000원</strong>
+                </div>
+
+                <div>
+                  <span>3개월차</span>
+                  <strong>500,000원</strong>
+                </div>
+              </div>
+
+              <a href="#contact" className="priceButton">
+                무료 상담 신청 →
               </a>
             </div>
           </div>
@@ -653,51 +458,45 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section
-        id="contact"
-        className="ctaSection"
-      >
+      <section id="contact" className="ctaSection">
         <div className="ctaGlow" />
 
-        <div className="container ctaInner">
-          <div className="sectionLabel lightBlue">
-            START WITH BUILDBOOSTWEB
+        <div className="container ctaGrid">
+          <div>
+            <span className="sectionLabel sectionLabelBlue">
+              START NOW
+            </span>
+
+            <h2>
+              시공은 사장님이,
+              <br />
+              <strong>온라인 영업은 BuildBoostWeb.</strong>
+            </h2>
+
+            <p>
+              업종과 출장 지역만 알려주세요.
+              업체에 맞는 홈페이지 구축 방향부터 상담해드립니다.
+            </p>
           </div>
 
-          <h2>
-            시공은 사장님이 하세요.
-            <br />
-            <span>
-              온라인 영업 기반은 저희가 만들겠습니다.
-            </span>
-          </h2>
-
-          <p>
-            업종과 영업 지역만 알려주시면
-            <br />
-            업체에 맞는 홈페이지와 네이버 검색 구조부터 상담해드립니다.
-          </p>
-
-          <div className="ctaButtons">
+          <div className="ctaContact">
             <a
               href="tel:01094134686"
-              className="primaryButton"
+              className="ctaCall"
             >
-              ☎ 전화 상담하기
+              <span>전화 상담</span>
+              <strong>010-9413-4686</strong>
             </a>
 
             <a
               href="https://open.kakao.com/o/sDHKtQJi"
               target="_blank"
               rel="noreferrer"
-              className="kakaoButton"
+              className="ctaKakao"
             >
-              카카오톡 상담
+              <span>카카오톡</span>
+              <strong>채팅 상담하기 →</strong>
             </a>
-          </div>
-
-          <div className="ctaSmall">
-            상담 후 계약 여부를 결정하셔도 됩니다.
           </div>
         </div>
       </section>
@@ -711,20 +510,15 @@ export default function Home() {
             </div>
 
             <p>
-              집수리·인테리어·시공업체 전용
-              <br />
-              홈페이지 제작 & 네이버 지역 검색 마케팅
+              시공업체 전용 홈페이지 제작 &
+              네이버 지역 검색 마케팅
             </p>
           </div>
 
-          <div className="footerRight">
-            <span>
-              www.buildboostweb.com
-            </span>
-
-            <span>
-              © 2026 BuildBoostWeb
-            </span>
+          <div>
+            www.buildboostweb.com
+            <br />
+            © 2026 BuildBoostWeb
           </div>
         </div>
       </footer>
@@ -744,7 +538,7 @@ export default function Home() {
           rel="noreferrer"
           className="mobileKakao"
         >
-          카카오톡
+          카카오톡 상담
         </a>
       </div>
     </main>
