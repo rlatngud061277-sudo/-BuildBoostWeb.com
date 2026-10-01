@@ -105,7 +105,7 @@ const PACKAGE = [
   "네이버 서치어드바이저 등록",
   "집수리모아 업체 등록",
   "전화·카카오톡 상담 연결",
-  "3개월 사이트 유지관리",
+  "사이트 유지 및 관리",
 ];
 
 export default function Home() {
@@ -141,7 +141,6 @@ export default function Home() {
         <div className="heroGlow heroGlowTwo" />
 
         <div className="container heroGrid">
-          {/* LEFT */}
           <div className="heroContent">
             <div className="heroBadge">
               시공업체 전용 홈페이지 · 네이버 지역 검색 마케팅
@@ -154,9 +153,9 @@ export default function Home() {
             </h1>
 
             <p className="heroDescription">
-              집수리·인테리어·철거·타일 등
-              시공업체를 위한 홈페이지를 제작하고,
-              지역별 검색 페이지와 네이버 SEO까지 함께 세팅합니다.
+              집수리·인테리어·철거·타일 등 시공업체를 위한 홈페이지를
+              제작하고, 지역별 검색 페이지와 네이버 SEO까지 함께
+              세팅합니다.
             </p>
 
             <div className="heroButtons">
@@ -179,23 +178,23 @@ export default function Home() {
 
             <div className="heroQuickInfo">
               <div>
-                <small>기본 제작</small>
-                <strong>시공 카테고리 3개</strong>
+                <small>첫 달 시작 비용</small>
+                <strong>560,000원</strong>
+              </div>
+
+              <div>
+                <small>2개월차부터</small>
+                <strong>월 500,000원</strong>
               </div>
 
               <div>
                 <small>지역 검색</small>
                 <strong>수도권 49개 지역</strong>
               </div>
-
-              <div>
-                <small>3개월 패키지</small>
-                <strong>1,560,000원</strong>
-              </div>
             </div>
           </div>
 
-          {/* RIGHT PROOF */}
+          {/* REAL CASE */}
           <div className="heroProof">
             <div className="proofTop">
               <div>
@@ -250,13 +249,18 @@ export default function Home() {
 
         <div className="container heroIndustry">
           {INDUSTRIES.map((item) => (
-            <span key={item}>{item}</span>
+            <span key={item}>
+              {item}
+            </span>
           ))}
         </div>
       </section>
 
-      {/* QUICK VALUE */}
-      <section id="service" className="quickSection">
+      {/* QUICK SERVICE */}
+      <section
+        id="service"
+        className="quickSection"
+      >
         <div className="container">
           <div className="quickHeading">
             <div>
@@ -267,12 +271,15 @@ export default function Home() {
               <h2>
                 예쁜 홈페이지보다
                 <br />
-                <strong>검색되고 문의되는 구조.</strong>
+                <strong>
+                  검색되고 문의되는 구조.
+                </strong>
               </h2>
             </div>
 
             <p>
               홈페이지 제작부터 네이버 검색 구조와
+              <br />
               문의 연결까지 한 번에 구성합니다.
             </p>
           </div>
@@ -280,9 +287,17 @@ export default function Home() {
           <div className="featureGrid">
             {FEATURES.map((item) => (
               <article key={item.number}>
-                <span>{item.number}</span>
-                <h3>{item.title}</h3>
-                <p>{item.desc}</p>
+                <span>
+                  {item.number}
+                </span>
+
+                <h3>
+                  {item.title}
+                </h3>
+
+                <p>
+                  {item.desc}
+                </p>
               </article>
             ))}
           </div>
@@ -304,7 +319,10 @@ export default function Home() {
             </div>
 
             <div className="seoExample">
-              <small>검색 페이지 예시</small>
+              <small>
+                검색 페이지 예시
+              </small>
+
               <strong>
                 강남구 집수리 · 수원 싱크볼 · 안양 철거
               </strong>
@@ -333,6 +351,7 @@ export default function Home() {
 
           <p>
             직접 제작·운영한 홈페이지와
+            <br />
             네이버 검색 화면을 확인해보세요.
           </p>
         </div>
@@ -375,7 +394,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PACKAGE + PRICE */}
+      {/* PRICE */}
       <section
         id="pricing"
         className="packagePriceSection"
@@ -384,81 +403,188 @@ export default function Home() {
           <div className="priceIntro">
             <div>
               <span className="sectionLabel">
-                PACKAGE & PRICE
+                PRICE
               </span>
 
               <h2>
-                복잡하게 나누지 않고
+                첫 달은
+                <strong> 56만원,</strong>
                 <br />
-                <strong>필요한 기능을 한 번에.</strong>
+                이후부터 월 50만원.
               </h2>
             </div>
 
             <p>
-              홈페이지를 처음 만드는 시공업체도
-              쉽게 시작할 수 있도록 구성했습니다.
+              처음 시작할 때 필요한 홈페이지 제작과
+              <br />
+              도메인 등록 비용이 첫 달에 포함됩니다.
             </p>
           </div>
 
           <div className="packagePriceGrid">
-            <div className="packageCard">
-              <div className="packageTitle">
-                <span>기본 패키지 포함사항</span>
-                <b>8 ITEMS</b>
+            {/* FIRST MONTH */}
+            <div className="firstMonthCard">
+              <div className="firstMonthHeader">
+                <div>
+                  <span className="priceEyebrow">
+                    FIRST PAYMENT
+                  </span>
+
+                  <h3>
+                    첫 결제 비용
+                  </h3>
+                </div>
+
+                <span className="firstMonthBadge">
+                  첫 달만
+                </span>
               </div>
 
-              <div className="packageItems">
-                {PACKAGE.map((item) => (
-                  <div key={item}>
-                    <span>✓</span>
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="priceCard">
-              <span className="priceSmall">
-                3개월 기본 패키지
-              </span>
-
-              <div className="priceMain">
-                1,560,000
+              <div className="firstMonthPrice">
+                560,000
                 <small>원</small>
               </div>
 
-              <div className="priceRows">
+              <p className="firstMonthDescription">
+                홈페이지 제작 및 초기 세팅 +
+                전용 도메인 1년 등록 비용
+              </p>
+
+              <div className="firstMonthBreakdown">
                 <div>
-                  <span>도메인 1년</span>
-                  <strong>30,000원</strong>
+                  <span>
+                    홈페이지 제작·초기 세팅
+                  </span>
+                  <strong>
+                    530,000원
+                  </strong>
                 </div>
 
                 <div>
-                  <span>1개월차</span>
-                  <strong>530,000원</strong>
-                </div>
-
-                <div>
-                  <span>2개월차</span>
-                  <strong>500,000원</strong>
-                </div>
-
-                <div>
-                  <span>3개월차</span>
-                  <strong>500,000원</strong>
+                  <span>
+                    전용 도메인 등록 1년
+                  </span>
+                  <strong>
+                    30,000원
+                  </strong>
                 </div>
               </div>
 
-              <a href="#contact" className="priceButton">
+              <div className="firstMonthTotal">
+                <span>
+                  첫 결제 합계
+                </span>
+
+                <strong>
+                  560,000원
+                </strong>
+              </div>
+            </div>
+
+            {/* MONTHLY */}
+            <div className="monthlyCard">
+              <span className="monthlyEyebrow">
+                FROM MONTH 2
+              </span>
+
+              <h3>
+                2개월차부터
+              </h3>
+
+              <div className="monthlyPrice">
+                월 500,000
+                <small>원</small>
+              </div>
+
+              <p>
+                홈페이지를 계속 운영하면서
+                네이버 검색 관리와 사이트 유지관리를 진행합니다.
+              </p>
+
+              <div className="monthlyFeatures">
+                <span>
+                  ✓ 사이트 유지관리
+                </span>
+
+                <span>
+                  ✓ 네이버 검색 노출 관리
+                </span>
+
+                <span>
+                  ✓ 지역 페이지 관리
+                </span>
+
+                <span>
+                  ✓ 상담 연결 유지
+                </span>
+              </div>
+
+              <a
+                href="#contact"
+                className="priceButton"
+              >
                 무료 상담 신청 →
               </a>
+            </div>
+          </div>
+
+          {/* PACKAGE INCLUDED */}
+          <div className="includedBox">
+            <div className="includedTitle">
+              <div>
+                <span className="sectionLabel">
+                  INCLUDED
+                </span>
+
+                <h3>
+                  이용 요금에 포함되는 항목
+                </h3>
+              </div>
+
+              <span>
+                최소 이용기간 3개월
+              </span>
+            </div>
+
+            <div className="packageItems">
+              {PACKAGE.map((item) => (
+                <div key={item}>
+                  <span>✓</span>
+                  {item}
+                </div>
+              ))}
+            </div>
+
+            <div className="pricingNotice">
+              <strong>
+                결제 예시
+              </strong>
+
+              <span>
+                1개월차 560,000원
+              </span>
+
+              <span>
+                2개월차 500,000원
+              </span>
+
+              <span>
+                3개월차 500,000원
+              </span>
+
+              <span className="totalReference">
+                3개월 이용 시 총 1,560,000원
+              </span>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section id="contact" className="ctaSection">
+      <section
+        id="contact"
+        className="ctaSection"
+      >
         <div className="ctaGlow" />
 
         <div className="container ctaGrid">
@@ -470,7 +596,9 @@ export default function Home() {
             <h2>
               시공은 사장님이,
               <br />
-              <strong>온라인 영업은 BuildBoostWeb.</strong>
+              <strong>
+                온라인 영업은 BuildBoostWeb.
+              </strong>
             </h2>
 
             <p>
@@ -484,8 +612,13 @@ export default function Home() {
               href="tel:01094134686"
               className="ctaCall"
             >
-              <span>전화 상담</span>
-              <strong>010-9413-4686</strong>
+              <span>
+                전화 상담
+              </span>
+
+              <strong>
+                010-9413-4686
+              </strong>
             </a>
 
             <a
@@ -494,8 +627,13 @@ export default function Home() {
               rel="noreferrer"
               className="ctaKakao"
             >
-              <span>카카오톡</span>
-              <strong>채팅 상담하기 →</strong>
+              <span>
+                카카오톡
+              </span>
+
+              <strong>
+                채팅 상담하기 →
+              </strong>
             </a>
           </div>
         </div>
