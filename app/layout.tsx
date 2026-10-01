@@ -43,6 +43,14 @@ export const metadata: Metadata = {
     title: "BuildBoostWeb | 시공업체 전용 홈페이지 제작",
     description:
       "집수리·인테리어·철거 등 시공업체를 위한 맞춤형 홈페이지 제작과 지역 검색 SEO 세팅.",
+    images: [
+      {
+        url: "/829C76B8-60E3-416A-B30F-0EAD2973F1D4.png",
+        width: 1365,
+        height: 768,
+        alt: "BuildBoostWeb 공유 이미지",
+      },
+    ],
   },
 
   twitter: {
@@ -50,6 +58,7 @@ export const metadata: Metadata = {
     title: "BuildBoostWeb | 시공업체 전용 홈페이지 제작",
     description:
       "시공업체 전용 홈페이지 제작, 지역별 SEO, 네이버 검색 등록, 문의 연결까지.",
+    images: ["/829C76B8-60E3-416A-B30F-0EAD2973F1D4.png"],
   },
 
   robots: {
