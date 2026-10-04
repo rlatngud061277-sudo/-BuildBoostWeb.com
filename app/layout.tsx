@@ -34,6 +34,13 @@ export const metadata: Metadata = {
     "BuildBoostWeb",
   ],
 
+  verification: {
+    other: {
+      "naver-site-verification":
+        "550dc384fe740968064045dbc57545f5aa8caf41",
+    },
+  },
+
   icons: {
     icon: FAVICON,
     shortcut: FAVICON,
